@@ -1,0 +1,24 @@
+# @package _global_
+
+order: 2
+num_vecs: 96
+normalized_laplacian: yes
+normalize_eigenvecs: no
+max_degree: 100
+num_phi_layers: 2
+num_rho_layers: 2
+phi_dim: 16
+embed_dim: 768
+eigen_dim: 768
+inner_dim: 96
+degree_dim: 16
+num_layers: 12
+num_heads: 16
+attention_dropout: 0.1
+dropout: 0.1
+linear_attention: no
+bias: yes
+stochastic_depth: yes
+token_ln: yes
+pe_type: LPE
+spe_lower_rank: null

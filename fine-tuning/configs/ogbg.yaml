@@ -1,0 +1,30 @@
+defaults:
+  - model: pcqm4m
+  - _self_
+
+root: .
+seed: 0
+num_workers: 8
+checkpoint: null
+backbone: transformer
+pe_type: LPE
+pooling: null
+
+lr: 1e-4
+min_lr: 0
+gradient_norm: 5.0
+weight_decay: 0.1
+batch_size: 32
+num_epochs: 100
+dataset_name: ???
+
+wandb_project: null
+wandb_entity: null
+wandb_name: null
+
+hydra:
+  searchpath:
+    - file://pre-training/configs
+
+
+

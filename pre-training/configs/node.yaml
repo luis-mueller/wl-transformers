@@ -1,0 +1,22 @@
+defaults:
+  - model: node
+  - _self_
+
+root: .
+
+# Training
+seed: 0
+lr: 1e-4
+min_lr: 0
+gradient_norm: 5.0
+weight_decay: 0
+num_workers: 8
+num_epochs: 100
+dataset_name: CS
+large_graph: yes
+cosine_lr_schedule: yes
+
+# Misc
+wandb_project: null
+wandb_entity: null
+wandb_name: null

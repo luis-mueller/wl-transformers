@@ -1,0 +1,20 @@
+defaults:
+  - model: pcqm4m
+  - _self_
+
+root: .
+output_dim: 16
+backbone: transformer
+batch_size: 16
+pooling: null
+
+wandb_project: null
+wandb_entity: null
+wandb_name: null
+
+hydra:
+  searchpath:
+    - file://pre-training/configs
+
+
+
