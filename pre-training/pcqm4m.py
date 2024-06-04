@@ -83,7 +83,7 @@ def main(cfg):
 
     data_dir, ckpt_dir = ensure_root_folder(cfg.root, master_process)
 
-    if cfg.wandb_project is not None:
+    if cfg.wandb_project is not None and master_process:
         wandb.init(
             project=cfg.wandb_project,
             entity=cfg.wandb_entity,
@@ -150,7 +150,7 @@ def main(cfg):
     if master_process:
         num_params = count_parameters(model)
 
-        if cfg.wandb_project is not None:
+        if cfg.wandb_project is not None and master_process:
             wandb.log(dict(num_params=num_params))
 
         logger.info(model)
@@ -221,7 +221,7 @@ def main(cfg):
                 loss_window.append(float(loss.detach().cpu()))
 
             if step % int(cfg.log_after) == 0 and master_process:
-                if cfg.wandb_project is not None:
+                if cfg.wandb_project is not None and master_process:
                     wandb.log(
                         dict(
                             train_loss=sum(loss_window) / len(loss_window),
@@ -263,7 +263,7 @@ def main(cfg):
                             best_val_score=best_val_score,
                         )
                     )
-                    if cfg.wandb_project is not None:
+                    if cfg.wandb_project is not None and master_process:
                         wandb.log(
                             dict(val_score=val_score, best_val_score=best_val_score),
                             step=step,
