@@ -163,4 +163,5 @@ cython_debug/
 outputs/
 wandb/
 multirun/
+logs/
 *.sh

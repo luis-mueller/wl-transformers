@@ -110,7 +110,7 @@ def main(cfg):
     )
 
     logger.info(f"Loading dataset from {data_dir}")
-    dataset = PygPCQM4Mv2Dataset(root=data_dir, transform=transform)
+    dataset = PygPCQM4Mv2Dataset(root=data_dir, pre_transform=transform)
     logger.info("Dataset loaded")
 
     split_idx = dataset.get_idx_split()
